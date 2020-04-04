@@ -1,7 +1,7 @@
 require "pry"
 class CashRegister
 
-  attr_accessor :total, :discount, :items
+  attr_accessor :total, :discount, :items, :last_transaction
 
   def initialize(discount = 0)
     @total = total = 0
@@ -11,15 +11,17 @@ class CashRegister
 
   def add_item(title, price, item_amount = 1)
     @total = total.to_f + (price.to_f * item_amount.to_i)
-    if item_amount > 1
-      i = 0
-      while i < item_amount
+      if item_amount > 1
+        i = 0
+        while i < item_amount
+          @items << title
+          i += 1
+        end
+      else
         @items << title
-        i += 1
       end
-    else
-      @items << title
-    end
+    @last_transaction = price * item_amount
+
   end
 
   def apply_discount
