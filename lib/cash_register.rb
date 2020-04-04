@@ -17,7 +17,7 @@ class CashRegister
     #binding.pry
     @discount = ((100 - discount) / 100 )
     @total = total * discount
-    return "After the discount, the total comes to #{@total.to_i}."
+    return "After the discount, the total comes to #{@total}."
   end
 
 
