@@ -2,6 +2,7 @@ require "pry"
 class CashRegister
 
   attr_accessor :total, :discount, :item
+  @items = []
 
   def initialize(discount = 0)
     @total = total = 0
@@ -10,6 +11,7 @@ class CashRegister
 
   def add_item(item, price, item_amount = 1)
     @total = total.to_f + (price.to_f * item_amount.to_i)
+    @item << item
 
   end
 
