@@ -1,8 +1,8 @@
 require "pry"
 class CashRegister
 
-  attr_accessor :total, :discount, :item
-  @@items = []
+  attr_accessor :total, :discount,
+
 
   def initialize(discount = 0)
     @total = total = 0
@@ -26,7 +26,7 @@ class CashRegister
   end
 
   def items
-    @@items.uniq
+    
   end
 
 
